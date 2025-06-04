@@ -17,3 +17,4 @@ How It Works:
 
 The output is our new triangulated surface. Its not fast enough to be used in real-time, but is certainly useful enough to pre-process map tiles to allow the new meshes to be saved off and loaded.
 
+![output](.output_x800.png)
