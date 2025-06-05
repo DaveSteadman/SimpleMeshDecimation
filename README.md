@@ -17,6 +17,6 @@ How It Works:
 
 The output is our new triangulated surface. Its not fast enough to be used in real-time, but is certainly useful enough to pre-process map tiles to allow the new meshes to be saved off and loaded.
 
-A trade-off is keeping the processing window size small, to minimise how much the problem multiplies-up (too many candidate lines), versus the artifacts we might introduce by forcing triangles on the window boundaries.
-
 ![output](./output_x800.png)
+
+A trade-off is keeping the processing window size small, to minimise how much the problem multiplies-up (too many candidate lines), versus the artifacts we might introduce by forcing triangles on the window boundaries.
