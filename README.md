@@ -3,7 +3,7 @@ SimpleMeshDecimation
 
 Purpose: A tech demo type project to invalidate a number of points in a 2D grid, and then recreate a contiguous set of triangles over the remaining points. The original idea being that we can calculate simpler meshes for map tiles in a 3D application by some means, and then recreate the the set of triangles that we need to draw it.
 
-This is not a comprehensive implementation that you would see in any "Delunay" method, but a simple implementatino from first principles.
+This is not a comprehensive implementation that you would see in any "Delunay" method, but a simple implementation from first principles.
 
 How It Works:
 =============
