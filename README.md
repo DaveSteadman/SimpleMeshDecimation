@@ -13,8 +13,10 @@ How It Works:
 4. Sort the lines in ascending length order.
 5. Consider each line in turn, placing it in a result list, then any additional line has to not intersect any existing line in the result list. The outcome is that we have a set of lines to turn into triangles.
 6. Going through the line list (and ranking point index values in ascending order) we look for an A -> B line, a B -> C line, and then a completing C -> A line. Recording this as a new trinagle.
-7. Finally, we filter out the special case where we could have a traingle overlapping smaller nested triangles.
+7. Finally, we filter out the special case where we could have a triangle containing smaller nested triangles.
 
 The output is our new triangulated surface. Its not fast enough to be used in real-time, but is certainly useful enough to pre-process map tiles to allow the new meshes to be saved off and loaded.
+
+A trade-off is keeping the processing window size small, to minimise how much the problem multiplies-up (too many candidate lines), versus the artifacts we might introduce by forcing triangles on the window boundaries.
 
 ![output](./output_x800.png)
