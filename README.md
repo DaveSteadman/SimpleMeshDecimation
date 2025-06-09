@@ -21,4 +21,4 @@ The output is our new triangulated surface. Its not fast enough to be used in re
 
 A trade-off is keeping the processing window size small, to minimise how much the problem multiplies-up (too many candidate lines), versus the sub-optimal triangles we might introduce by forcing triangles to be created on a processing window boundary.
 
-The output based on shortest-lines produces a decent mesh, but some skinny triangles are still created that could be improved though a different line selection method. Something like using the largest possible triangle internal angles oculd be a future improvement.
+The output based on shortest-lines produces a decent mesh, but some skinny triangles are still created that could be improved though a different line selection method. Something like using the largest possible triangle internal angles could be a future improvement.
