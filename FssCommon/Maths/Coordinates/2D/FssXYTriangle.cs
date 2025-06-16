@@ -43,16 +43,16 @@ public struct FssXYTriangle
     // Returns true if the triangle is degenerate (area is zero or nearly zero).
     public bool IsDegenerate() => Area() < 1e-10;
 
-    public GloXYRect AABB()
+    public FssXYRect AABB()
     {
         double minX = Math.Min(A.X, Math.Min(B.X, C.X));
         double maxX = Math.Max(A.X, Math.Max(B.X, C.X));
         double minY = Math.Min(A.Y, Math.Min(B.Y, C.Y));
         double maxY = Math.Max(A.Y, Math.Max(B.Y, C.Y));
-    
-        return new GloXYRect(minX, minY, maxX - minX, maxY - minY);
+
+        return new FssXYRect(minX, minY, maxX - minX, maxY - minY);
     }
-    
+
     // --------------------------------------------------------------------------------------------
     // MARK: Triangle Utilities
     // --------------------------------------------------------------------------------------------

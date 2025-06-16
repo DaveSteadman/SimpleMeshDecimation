@@ -37,8 +37,7 @@ meshdata.SetInteriorPointAnchorByStep(anchorPointSpacing, anchorPointSpacing);
 meshdata.SetBoundaryPointAnchorByStep(anchorPointSpacing / 2, anchorPointSpacing / 2);
 
 // Create the subgrid we're going to deal with for triangulation
-List<FssSubGridSize> subGridList = meshdata.GetSubGridsByStep(60, 40);
-//List<FssSubGridSize> subGridList = meshdata.GetSubGridsByStep(10, 10);
+List<FssSubGridSize> subGridList = meshdata.GetSubGridsByStep(20, 20);
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -62,6 +61,7 @@ foreach (FssSubGridSize currsubgrid in subGridList)
 
     // Create a line between each valid point in the subgrid
     List<KoreEdge> edges = KoreMeshOperations.CreateEdgesFromActivePoints(subPoints, meshdata);
+    int numInitialEdges = edges.Count;
 
     // We know that we've created a set of active points across the mesh, so we can safely discard any length beyond what would be used for triangulation.
     double maxLength = anchorPointSpacing * 1.5; // would actually be root-2, but 1.5 is a good approximation for our quick-cull purposes
@@ -126,7 +126,7 @@ foreach (FssSubGridSize currsubgrid in subGridList)
     Console.WriteLine($"Mesh Stats:");
     Console.WriteLine($"- Subgrid   - {currsubgrid.SizeX} x {currsubgrid.SizeY}, {currsubgrid.Size} points");
     Console.WriteLine($"- Points    - {meshdata.GetPointsAsList().Count} total points, {meshdata.GetActivePointsAsList().Count} active");
-    Console.WriteLine($"- Edges     - {edges.Count} total, {shortestNonIntersectingEdges.Count} non-intersecting");
+    Console.WriteLine($"- Edges     - {numInitialEdges} initial, {edges.Count} considered, {shortestNonIntersectingEdges.Count} non-intersecting");
     Console.WriteLine($"- Triangles - {triangles.Count} total, {filteredTriangles.Count} filtered");
 
 }
