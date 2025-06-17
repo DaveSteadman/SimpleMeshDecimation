@@ -24,3 +24,33 @@ In our example image here, we created a dense 2D grid of points, and randomly in
 A trade-off is keeping the processing window size small, to minimise how much the problem multiplies-up (too many candidate lines), versus the sub-optimal triangles we might introduce by forcing triangles to be created on a processing window boundary.
 
 The output based on shortest-lines produces a decent mesh, but some skinny triangles are still created that could be improved though a different line selection method. Something like using the largest possible triangle internal angles could be a future improvement.
+
+How It Build & Run:
+===================
+
+A pre-requisite is a machine with an uptodate dotnet installation.
+
+1 - Extract the code:
+```
+git clone https://github.com/DaveSteadman/SimpleMeshDecimation.git
+cd SimpleMeshDecimation
+```
+
+2 - Check the environment and dependencies are all present
+```
+dotnet workload update
+```
+
+3 - Build and run:
+```
+dotnet build
+dotnet run
+```
+
+The output is a number of debug statements about the number of points, lines and triangles processed, and a new Output.png image.
+
+
+
+
+
+
