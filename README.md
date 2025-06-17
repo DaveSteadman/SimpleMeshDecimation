@@ -30,18 +30,18 @@ How It Build & Run:
 
 A pre-requisite is a machine with an uptodate dotnet installation.
 
-1 - Extract the code into a new/empty directory
+1. Extract the code into a new/empty directory
 ```
 git clone https://github.com/DaveSteadman/SimpleMeshDecimation.git
 cd SimpleMeshDecimation
 ```
 
-2 - Check the environment and dependencies are all present
+2. Check the environment and dependencies are all present
 ```
 dotnet workload update
 ```
 
-3 - Build and run
+3. Build and run
 ```
 dotnet build
 dotnet run
