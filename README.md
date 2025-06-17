@@ -17,7 +17,8 @@ How It Works:
 
 The output is our new triangulated surface. Its not fast enough to be used in real-time, but is certainly useful enough to pre-process map tiles to allow the new meshes to be saved off and loaded.
 
-In our example image here, we created a dense 2D grid of points, and randomly invlaidated points as the X axis increases. We created 3x2 processing windows to recreate triangles over the remaining points:
+In our example image here, we created a dense 2D grid of points, and randomly invlaidated points as the X axis increases. We created 3x2 processing windows to recreate triangles over the remaining points.
+
 ![output](./output_x800.png)
 
 A trade-off is keeping the processing window size small, to minimise how much the problem multiplies-up (too many candidate lines), versus the sub-optimal triangles we might introduce by forcing triangles to be created on a processing window boundary.
