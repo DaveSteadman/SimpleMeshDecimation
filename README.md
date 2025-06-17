@@ -30,6 +30,8 @@ How It Build & Run:
 
 A pre-requisite is a machine with an uptodate dotnet installation.
 
+Steps:
+
 1. Extract the code into a new/empty directory
 ```
 git clone https://github.com/DaveSteadman/SimpleMeshDecimation.git
