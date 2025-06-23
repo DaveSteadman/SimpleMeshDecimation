@@ -36,6 +36,8 @@ public class FssXYLine : IFssXY
         P2 = line.P2;
     }
 
+    public static FssXYLine Zero => new FssXYLine(0, 0, 0, 0);
+
     // --------------------------------------------------------------------------------------------
     // #MARK: IFssXY Operations
     // --------------------------------------------------------------------------------------------
@@ -43,7 +45,7 @@ public class FssXYLine : IFssXY
     public FssXYRect? AABB()
     {
         if (Length < FssConsts.ArbitraryMinDouble) return null;
-        
+
         double minX = Math.Min(P1.X, P2.X);
         double minY = Math.Min(P1.Y, P2.Y);
         double maxX = Math.Max(P1.X, P2.X);
@@ -69,7 +71,7 @@ public class FssXYLine : IFssXY
     // --------------------------------------------------------------------------------------------
 
     // Return a new line object, will all points offset by an XY amount.
-    
+
     public FssXYLine Offset(double x, double y)
     {
         return new FssXYLine(P1.Offset(x, y), P2.Offset(x, y));

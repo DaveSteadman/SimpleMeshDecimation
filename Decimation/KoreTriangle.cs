@@ -147,6 +147,12 @@ public struct KoreTriangle : IEquatable<KoreTriangle>
         return _triangle.CenterPoint();
     }
 
+    public bool OverlapsAABB(KoreTriangle checkTriangle)
+    {
+        FssXYRect aabb = _triangle.AABB();
+        FssXYRect checkAABB = checkTriangle._triangle.AABB();
+        return aabb.DoesIntersect(checkAABB);
+    }
 
 }
 

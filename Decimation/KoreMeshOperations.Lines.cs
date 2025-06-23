@@ -370,6 +370,12 @@ public static partial class KoreMeshOperations
             // only need to test against triangles we've already kept (all smaller or equal area)
             foreach (var R in result)
             {
+                // if (R.OverlapsAABB(T))
+                // {
+                //     overlapsSmaller = true;
+                //     break;
+                // }
+
                 // a) If T contains R’s centroid, it fully or partially covers R
                 if (T.Contains(R.CenterPoint()))
                 {

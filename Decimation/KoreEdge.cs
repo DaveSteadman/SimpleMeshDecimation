@@ -13,7 +13,7 @@ public struct KoreEdge : IEquatable<KoreEdge>
     public int P2 { get; }
     public double Length { get; set; } // Length of the edge, used for triangulation
 
-    public FssXYLine mathLine { get; set; }
+    public FssXYLine mathLine { get; set; } = FssXYLine.Zero;
 
     public KoreEdge(int u, int v)
     {
